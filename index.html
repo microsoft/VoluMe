@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VoluMe - Authentic 3D Video Calls from Live Gaussian Splat Prediction</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="container is-max-desktop">
+            <div class="navbar-brand">
+                <a class="navbar-item"
+                    href="https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge/">
+                    <img src="img/Microsoft-logo.svg" alt="Mixed Reality & AI Lab – Cambridge" style="height: 1.4rem;">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item"
+                        href="https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge/">
+                        Mixed Reality & AI
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <a class="navbar-item" href="https://iccv.thecvf.com/Conferences/2025">
+                        <img class="is-hidden-touch" src="img/iccv-navbar-logo-white.svg" alt="ICCV 2025"
+                            style="height: 100%;">
+                        <img class="is-hidden-desktop" src="img/iccv-navbar-logo-col.svg" alt="ICCV 2025"
+                            style="height: 100%;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h1 class="title is-2 has-text-centered">VoluMe</h1>
+            <p class="subtitle is-4 has-text-centered">
+                Authentic 3D Video Calls from Live Gaussian Splat Prediction
+            </p>
+            <p class="subtitle is-5 has-text-centered has-text-grey">
+                International Conference on
+                <br class="is-hidden-tablet">
+                Computer Vision 2025
+            </p>
+            <p class="subtitle is-6 has-text-centered authors" style="line-height: 1.5;">
+                <span><a href="mailto:madelago@microsoft.com">Martin&nbsp;de&nbsp;La&nbsp;Gorce</a></span>
+                <span><a href="https://chewitt.me/">Charlie&nbsp;Hewitt</a></span>
+                <span><a href="mailto:Tibor.Takacs@microsoft.com">Tibor&nbsp;Tak&aacute;cs</a></span>
+                <span><a href="https://rgerd.io/">Robert&nbsp;Gerdisch</a></span>
+                <span><a href="mailto:zhosenie@microsoft.com">Zafiirah&nbsp;Hosenie</a></span>
+                <span><a href="https://gmeishvili.github.io/">Givi&nbsp;Meishvili</a></span>
+                <span><a href="https://scholar.google.com/citations?user=n137ACEAAAAJ">Marek&nbsp;Kowalski</a></span>
+                <span><a
+                        href="https://scholar.google.com/citations?user=pDPdQq8AAAAJ">Thomas&nbsp;J&nbsp;Cashman</a></span>
+                <span><a href="mailto:acriminisi@microsoft.com">Anotnio&nbsp;Criminisi</a></span>
+            </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered mt-5">
+            <a class="button is-rounded is-link is-light mr-2" disabled>
+                <span class="icon"><i class="fa fa-file-text"></i></span>
+                <span>Paper</span>
+            </a>
+            <a href="https://arxiv.org/abs/TODO.TODO" class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+            </a>
+            <a href="https://youtu.be/TODO" class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="fa fa-youtube" aria-hidden="true"></i></span>
+                <span>Video</span>
+            </a>
+        </div>
+    </section>
+    <section>
+        <div class="container is-max-desktop">
+            <figure class="image is-16by9">
+                <iframe class="has-ratio" width="640" height="360" src="https://youtube.com/embed/TODO" frameborder="0"
+                    allowfullscreen=""></iframe>
+            </figure>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Abstract
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>Virtual 3D meetings offer the potential to enhance copresence, increase engagement and thus improve
+                    effectiveness of remote meetings compared to standard 2D video calls. However, representing people
+                    in 3D meetings remains a challenge; existing solutions achieve high quality by using complex
+                    hardware, making use of fixed appearance via enrolment, or by inverting a pre-trained generative
+                    model. These approaches lead to constraints that are unwelcome and ill-fitting for videoconferencing
+                    applications.</p>
+                <p>We present the first method to predict 3D Gaussian reconstructions in real time from a single 2D
+                    webcam feed, where the 3D representation is not only live and realistic, but also <i>authentic</i>
+                    to the input video. By conditioning the 3D representation on each video frame independently, our
+                    reconstruction faithfully recreates the input video from the captured viewpoint (a property we call
+                    <i>authenticity</i>), while generalizing realistically to novel viewpoints. Additionally, we
+                    introduce a stability loss to obtain reconstructions that are temporally stable on video sequences.
+                </p>
+                <p>We show that our method delivers state-of-the-art accuracy in visual quality and stability metrics
+                    compared to existing methods, and demonstrate our approach in live one-to-one 3D meetings using only
+                    a standard 2D camera and display. This demonstrates that our approach can allow anyone to
+                    communicate volumetrically, via a method for 3D videoconferencing that is not only highly
+                    accessible, but also realistic and authentic.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Section Title
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>Some Text</p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                BibTeX
+            </h1>
+            <pre>
+@inproceedings{deLaGorce2025VoluMe,
+    author={de La Gorce, Martin and Hewitt, Charlie and Tak\'{a}cs, Tibor and Gerdisch, Robert and Hosenie, Zafiirah and Meishvili, Givi and Kowalski, Marek and Cashman, Thomas J. and Criminisi, Antonio},
+    title={{VoluMe} -- Authentic 3D Video Calls from Live Gaussian Splat Prediction},
+    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year={2025},
+    month={October}
+}
+</pre>
+        </div>
+    </section>
+    <footer class="footer pb-0">
+        <div class="content has-text-centered pb-5">
+            <p>
+                Work conducted at the <a
+                    href=https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge>Mixed Reality & AI
+                    Lab &ndash; Cambridge</a>.<br>
+                <img src="img/Microsoft-logo-only.svg" class="mt-5" alt="Microsoft" style="height: 2rem;">
+            </p>
+        </div>
+        <div class="footer-links content has-text-centered pt-5 has-text-grey-lighter is-size-7">
+            <a href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy</a>
+            <a href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms of Use</a>
+            <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks">Trademarks</a>
+            <a href="https://microsoft.com">&copy; Microsoft 2025</a>
+        </div>
+    </footer>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
+</html>
