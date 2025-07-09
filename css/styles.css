@@ -22,6 +22,8 @@
     padding: 0 1em;
 }
 
-.column {
-    text-align: left;
+.column video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
