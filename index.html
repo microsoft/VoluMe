@@ -193,34 +193,38 @@
     <section class="section pt-0">
         <div class="container is-max-desktop">
             <h1 class="title is-4">
-                Method
+                Training Methodology
             </h1>
             <div class="content has-text-justified-desktop">
-                <div class="columns">
-                    <div class="column">
-                        <img src="img/training_data.jpg" class="is-hidden-tablet-only" alt="Training Data">
-                        <img src="img/training_data_single.jpg" class="is-hidden-mobile is-hidden-desktop" alt="Training Data">
-                    </div>
-                    <div class="column">
-                        <p>
-                            The VoluMe model is trained exclusively on <i>synthetic</i> data generated using our <a href="https://aka.ms/SynthMoCap">synthetic human data generation pipeline</a>.
-                            This enables us to use diverse, multi-view data with perfect camera parameters, and which emulates a huge variety in-the-wild scenarios.
-                            This is extremely difficult to achieve with real data, and enables our approach to achieve high quality and stability, while also generalizing well to a variety of people and environments.
-                            For a single realistic input image (top) we can generate arbitrarily many novel views for supervision (bottom).
-                        </p>
-                    </div>
-                </div>
                 <p>
                     Our method builds on <a href="https://szymanowiczs.github.io/splatter-image">Splatter Images</a> with a focus on improving quality and reducing execution time to enable real-time 3D video calls.
                     We achieve this by:
-                    <ul>
-                        <li>Predicting multiple Gaussians per pixel to enhance the fidelity of the 3D representation</li>
-                        <li>Using homography-based ROI extraction to normalize inputs and enable us to minimize network size</li>
-                        <li>Reducing the size of the network significantly and incorporating optimizable layers and direct color sampling to improve quality</li>
-                        <li>Using scale correction and stability loss during training to reduce jitter and account for depth ambiguity in monocular inputs</li>
-                    </ul>
                 </p>
-                <img src="img/method.jpg">
+                <ul>
+                    <li>Predicting multiple Gaussians per pixel to enhance the fidelity of the 3D representation</li>
+                    <li>Using homography-based ROI extraction to normalize inputs and enable us to minimize network size</li>
+                    <li>Reducing the size of the network significantly and incorporating optimizable layers and direct color sampling to improve quality</li>
+                    <li>Using scale correction and stability loss during training to reduce jitter and account for depth ambiguity in monocular inputs</li>
+                </ul>
+                <img class="mb-5" src="img/training_pipeline.jpg" alt="Training Pipeline">
+                <p>
+                    The VoluMe model is trained exclusively on <i>synthetic</i> data generated using our <a href="https://aka.ms/SynthMoCap">synthetic human data generation pipeline</a>.
+                    This enables us to use diverse, multi-view data with perfect camera parameters, and which emulates a huge variety in-the-wild scenarios.
+                    This is extremely difficult to achieve with real data, and enables our approach to achieve high quality and stability, while also generalizing well to a variety of people and environments.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                3D Video Calls
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+                    Description of video call app
+                </p>
+                <img class="mb-5" src="img/inference_pipeline.jpg" alt="Inference Pipeline">
             </div>
         </div>
     </section>
