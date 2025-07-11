@@ -63,7 +63,8 @@
                 <span><a href="mailto:zhosenie@microsoft.com">Zafiirah&nbsp;Hosenie</a></span>
                 <span><a href="https://gmeishvili.github.io/">Givi&nbsp;Meishvili</a></span>
                 <span><a href="https://scholar.google.com/citations?user=n137ACEAAAAJ">Marek&nbsp;Kowalski</a></span>
-                <span><a href="https://scholar.google.com/citations?user=pDPdQq8AAAAJ">Thomas&nbsp;J&nbsp;Cashman</a></span>
+                <span><a
+                        href="https://scholar.google.com/citations?user=pDPdQq8AAAAJ">Thomas&nbsp;J&nbsp;Cashman</a></span>
                 <span><a href="mailto:acriminisi@microsoft.com">Anotnio&nbsp;Criminisi</a></span>
             </p>
         </div>
@@ -118,6 +119,43 @@
                     a standard 2D camera and display. This demonstrates that our approach can allow anyone to
                     communicate volumetrically, via a method for 3D videoconferencing that is not only highly
                     accessible, but also realistic and authentic.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                3D Video Calls
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+                    To enable videoconferencing where users have the rich, authentic and unconstrained representation
+                    that is familiar from 2D video, without the need for specialized hardware, we need a 3D
+                    representation that is:
+                </p>
+                <ul>
+                    <li><i>Authentic</i>: generates images that match the input video
+                        foreground (with every detail of, for example, clothes,
+                        hair, and glasses from the present moment), when rendered from the original camera's viewpoint
+                    </li>
+                    <li><i>Realistic</i>: generates plausible and realistic reconstructions when rendered in new views,
+                        while supporting the full diversity of human communication (e.g. including
+                        diverse hair, headwear and accessories).</li>
+                    <li><i>Live</i>: runs in real time on consumer devices.</li>
+                    <li><i>Stable</i>: generates predictions that are stable with respect
+                        to time and as the viewpoint changes, to avoid flickering.</li>
+                </ul>
+                <p>
+                    We develop a Gaussian Splatting-based method which achieves these goals, and demonstrate it in a
+                    live 3D video call application.
+                    On the user's device we perform face detection and run a lightweight UNet to predict
+                    Gaussian splats for each pixel in the head region.
+                    The predicted splats are then rendered in real time to the user's display, and can be viewed from
+                    any angle. The applications runs at 28 FPS on a standard laptop with a NVIDIA 4090 Mobile GPU.
+                </p>
+                <p>
+                </p>
+                <img class="mb-5" src="img/inference_pipeline.jpg" alt="Inference Pipeline">
             </div>
         </div>
     </section>
@@ -197,34 +235,28 @@
             </h1>
             <div class="content has-text-justified-desktop">
                 <p>
-                    Our method builds on <a href="https://szymanowiczs.github.io/splatter-image">Splatter Images</a> with a focus on improving quality and reducing execution time to enable real-time 3D video calls.
+                    Our UNet architecture builds on <a href="https://szymanowiczs.github.io/splatter-image">Splatter Images</a>
+                    with a focus on improving quality and reducing execution time to enable real-time 3D video calls.
                     We achieve this by:
                 </p>
                 <ul>
                     <li>Predicting multiple Gaussians per pixel to enhance the fidelity of the 3D representation</li>
-                    <li>Using homography-based ROI extraction to normalize inputs and enable us to minimize network size</li>
-                    <li>Reducing the size of the network significantly and incorporating optimizable layers and direct color sampling to improve quality</li>
-                    <li>Using scale correction and stability loss during training to reduce jitter and account for depth ambiguity in monocular inputs</li>
+                    <li>Using homography-based ROI extraction to normalize inputs and enable us to minimize network size
+                    </li>
+                    <li>Reducing the size of the network significantly and incorporating optimizable layers and direct
+                        color sampling to improve quality</li>
+                    <li>Using scale correction and stability loss during training to reduce jitter and account for depth
+                        ambiguity in monocular inputs</li>
                 </ul>
                 <img class="mb-5" src="img/training_pipeline.jpg" alt="Training Pipeline">
                 <p>
-                    The VoluMe model is trained exclusively on <i>synthetic</i> data generated using our <a href="https://aka.ms/SynthMoCap">synthetic human data generation pipeline</a>.
-                    This enables us to use diverse, multi-view data with perfect camera parameters, and which emulates a huge variety in-the-wild scenarios.
-                    This is extremely difficult to achieve with real data, and enables our approach to achieve high quality and stability, while also generalizing well to a variety of people and environments.
+                    The VoluMe model is trained exclusively on <i>synthetic</i> data generated using our <a
+                        href="https://aka.ms/SynthMoCap">synthetic human data generation pipeline</a>.
+                    This enables us to use diverse, multi-view data with perfect camera parameters, and which emulates a
+                    huge variety in-the-wild scenarios.
+                    This is extremely difficult to achieve with real data, and enables our approach to achieve high
+                    quality and stability, while also generalizing well to a variety of people and environments.
                 </p>
-            </div>
-        </div>
-    </section>
-    <section class="section pt-0">
-        <div class="container is-max-desktop">
-            <h1 class="title is-4">
-                3D Video Calls
-            </h1>
-            <div class="content has-text-justified-desktop">
-                <p>
-                    Description of video call app
-                </p>
-                <img class="mb-5" src="img/inference_pipeline.jpg" alt="Inference Pipeline">
             </div>
         </div>
     </section>
@@ -247,9 +279,10 @@
     <footer class="footer pb-0">
         <div class="content has-text-centered pb-5">
             <p>
-                Work conducted at the <a href=https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge>
-                <br class="is-hidden-desktop">
-                Mixed Reality &amp; AI Lab &ndash; Cambridge</a>.<br>
+                Work conducted at the <a
+                    href=https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge>
+                    <br class="is-hidden-desktop">
+                    Mixed Reality &amp; AI Lab &ndash; Cambridge</a>.<br>
                 <img src="img/Microsoft-logo-only.svg" class="mt-5" alt="Microsoft" style="height: 2rem;">
             </p>
         </div>
